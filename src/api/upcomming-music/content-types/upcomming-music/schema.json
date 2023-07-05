@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "upcomming_musics",
+  "info": {
+    "singularName": "upcomming-music",
+    "pluralName": "upcomming-musics",
+    "displayName": "upcomming_music",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "upcomming_musics"
+    },
+    "poster_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "upcomming_music_likes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::upcomming-music-like.upcomming-music-like",
+      "mappedBy": "upcomming_music"
+    }
+  }
+}

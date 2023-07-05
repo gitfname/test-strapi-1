@@ -1,0 +1,24 @@
+GET http://localhost:1337/api/musics/getTop7UpcomingMusics
+
+###
+
+POST http://localhost:1337/api/auth/local/register
+Content-Type: application/json
+
+{
+    "username": "ali",
+    "email": "ali@gmail.com",
+    "password": "123456"
+}
+
+###
+
+GET http://localhost:1337/api/listening-history?userId=15
+
+####
+
+PUT http://localhost:1337/api/listening-history?userId=15&musicId=492
+
+###
+
+DELETE  http://localhost:1337/api/listening-history?userId=15&musicId=492

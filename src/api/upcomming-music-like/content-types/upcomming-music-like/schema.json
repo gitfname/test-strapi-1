@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "upcomming_music_likes",
+  "info": {
+    "singularName": "upcomming-music-like",
+    "pluralName": "upcomming-music-likes",
+    "displayName": "upcomming_music_like"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "like": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "upcomming_music_likes"
+    },
+    "upcomming_music": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::upcomming-music.upcomming-music",
+      "inversedBy": "upcomming_music_likes"
+    }
+  }
+}

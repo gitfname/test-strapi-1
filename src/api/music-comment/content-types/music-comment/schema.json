@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "music_comments",
+  "info": {
+    "singularName": "music-comment",
+    "pluralName": "music-comments",
+    "displayName": "music-comment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "music": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::music.music",
+      "inversedBy": "music_comments"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "music_comments"
+    }
+  }
+}
